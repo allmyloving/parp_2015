@@ -1,0 +1,31 @@
+﻿Build started 06.11.2015 11:30:43.
+     1>Project "C:\Users\Darya\documents\visual studio 2013\Projects\pp_lab2\pp_lab2\pp_lab2.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Debug\pp_lab2.pch" /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt pp_lab2.cpp
+         pp_lab2.cpp
+     1>c:\users\darya\documents\visual studio 2013\projects\pp_lab2\pp_lab2\pp_lab2.cpp(19): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\darya\documents\visual studio 2013\projects\pp_lab2\pp_lab2\pp_lab2.cpp(123): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\darya\documents\visual studio 2013\projects\pp_lab2\pp_lab2\pp_lab2.cpp(175): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\darya\documents\visual studio 2013\projects\pp_lab2\pp_lab2\pp_lab2.cpp(180): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\darya\documents\visual studio 2013\projects\pp_lab2\pp_lab2\pp_lab2.cpp(267): warning C4244: 'argument' : conversion from 'time_t' to 'unsigned int', possible loss of data
+     1>c:\users\darya\documents\visual studio 2013\projects\pp_lab2\pp_lab2\pp_lab2.cpp(27): warning C4018: '<' : signed/unsigned mismatch
+                 c:\users\darya\documents\visual studio 2013\projects\pp_lab2\pp_lab2\pp_lab2.cpp(258) : see reference to function template instantiation 'void fill<double>(T [],size_t,int,int)' being compiled
+                 with
+                 [
+                     T=double
+                 ]
+     1>c:\users\darya\documents\visual studio 2013\projects\pp_lab2\pp_lab2\pp_lab2.cpp(240): warning C4018: '<' : signed/unsigned mismatch
+                 c:\users\darya\documents\visual studio 2013\projects\pp_lab2\pp_lab2\pp_lab2.cpp(261) : see reference to function template instantiation 'void round<double>(T [],size_t,size_t)' being compiled
+                 with
+                 [
+                     T=double
+                 ]
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Darya\documents\visual studio 2013\Projects\pp_lab2\Debug\pp_lab2.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Darya\documents\visual studio 2013\Projects\pp_lab2\Debug\pp_lab2.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Darya\documents\visual studio 2013\Projects\pp_lab2\Debug\pp_lab2.lib" /MACHINE:X86 Debug\pp_lab2.obj
+         Debug\stdafx.obj
+         pp_lab2.vcxproj -> C:\Users\Darya\documents\visual studio 2013\Projects\pp_lab2\Debug\pp_lab2.exe
+     1>Done Building Project "C:\Users\Darya\documents\visual studio 2013\Projects\pp_lab2\pp_lab2\pp_lab2.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:03.09
