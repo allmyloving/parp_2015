@@ -1,0 +1,47 @@
+﻿Build started 08.11.2015 18:16:58.
+     1>Project "d:\uni\parallel pr\labs\pp_lab3\pp_lab3\pp_lab3.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Debug\pp_lab3.pch" /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt task2_sum.cpp
+         task2_sum.cpp
+     1>d:\uni\parallel pr\labs\pp_lab3\pp_lab3\task2_sum.cpp(36): warning C4018: '<' : signed/unsigned mismatch
+     1>d:\uni\parallel pr\labs\pp_lab3\pp_lab3\task2_sum.cpp(46): warning C4018: '<' : signed/unsigned mismatch
+     1>d:\uni\parallel pr\labs\pp_lab3\pp_lab3\task2_sum.cpp(56): warning C4018: '<' : signed/unsigned mismatch
+     1>d:\uni\parallel pr\labs\pp_lab3\pp_lab3\task2_sum.cpp(66): warning C4018: '<' : signed/unsigned mismatch
+     1>d:\uni\parallel pr\labs\pp_lab3\pp_lab3\task2_sum.cpp(80): warning C4244: '=' : conversion from 'DWORD64' to 'unsigned long', possible loss of data
+     1>d:\uni\parallel pr\labs\pp_lab3\pp_lab3\task2_sum.cpp(82): warning C4244: '=' : conversion from 'DWORD64' to 'unsigned long', possible loss of data
+     1>d:\uni\parallel pr\labs\pp_lab3\pp_lab3\task2_sum.cpp(85): warning C4244: '=' : conversion from 'DWORD64' to 'unsigned long', possible loss of data
+     1>d:\uni\parallel pr\labs\pp_lab3\pp_lab3\task2_sum.cpp(87): warning C4244: '=' : conversion from 'DWORD64' to 'unsigned long', possible loss of data
+     1>d:\uni\parallel pr\labs\pp_lab3\pp_lab3\task2_sum.cpp(99): warning C4244: '=' : conversion from 'DWORD64' to 'unsigned long', possible loss of data
+     1>d:\uni\parallel pr\labs\pp_lab3\pp_lab3\task2_sum.cpp(101): warning C4244: '=' : conversion from 'DWORD64' to 'unsigned long', possible loss of data
+     1>d:\uni\parallel pr\labs\pp_lab3\pp_lab3\task2_sum.cpp(104): warning C4244: '=' : conversion from 'DWORD64' to 'unsigned long', possible loss of data
+     1>d:\uni\parallel pr\labs\pp_lab3\pp_lab3\task2_sum.cpp(106): warning C4244: '=' : conversion from 'DWORD64' to 'unsigned long', possible loss of data
+     1>d:\uni\parallel pr\labs\pp_lab3\pp_lab3\task2_sum.cpp(119): warning C4244: '=' : conversion from 'DWORD64' to 'unsigned long', possible loss of data
+     1>d:\uni\parallel pr\labs\pp_lab3\pp_lab3\task2_sum.cpp(121): warning C4244: '=' : conversion from 'DWORD64' to 'unsigned long', possible loss of data
+     1>d:\uni\parallel pr\labs\pp_lab3\pp_lab3\task2_sum.cpp(124): warning C4244: '=' : conversion from 'DWORD64' to 'unsigned long', possible loss of data
+     1>d:\uni\parallel pr\labs\pp_lab3\pp_lab3\task2_sum.cpp(126): warning C4244: '=' : conversion from 'DWORD64' to 'unsigned long', possible loss of data
+     1>d:\uni\parallel pr\labs\pp_lab3\pp_lab3\task2_sum.cpp(139): warning C4244: '=' : conversion from 'DWORD64' to 'unsigned long', possible loss of data
+     1>d:\uni\parallel pr\labs\pp_lab3\pp_lab3\task2_sum.cpp(141): warning C4244: '=' : conversion from 'DWORD64' to 'unsigned long', possible loss of data
+     1>d:\uni\parallel pr\labs\pp_lab3\pp_lab3\task2_sum.cpp(144): warning C4244: '=' : conversion from 'DWORD64' to 'unsigned long', possible loss of data
+     1>d:\uni\parallel pr\labs\pp_lab3\pp_lab3\task2_sum.cpp(146): warning C4244: '=' : conversion from 'DWORD64' to 'unsigned long', possible loss of data
+     1>d:\uni\parallel pr\labs\pp_lab3\pp_lab3\task2_sum.cpp(15): warning C4018: '<' : signed/unsigned mismatch
+                 d:\uni\parallel pr\labs\pp_lab3\pp_lab3\task2_sum.cpp(77) : see reference to function template instantiation 'void fill<int>(T [],size_t,int,int)' being compiled
+                 with
+                 [
+                     T=int
+                 ]
+     1>d:\uni\parallel pr\labs\pp_lab3\pp_lab3\task2_sum.cpp(17): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+     1>d:\uni\parallel pr\labs\pp_lab3\pp_lab3\task2_sum.cpp(17): warning C4244: '=' : conversion from 'double' to 'BYTE', possible loss of data
+     1>d:\uni\parallel pr\labs\pp_lab3\pp_lab3\task2_sum.cpp(17): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"d:\uni\parallel pr\labs\pp_lab3\Debug\pp_lab3.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"d:\uni\parallel pr\labs\pp_lab3\Debug\pp_lab3.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"d:\uni\parallel pr\labs\pp_lab3\Debug\pp_lab3.lib" /MACHINE:X86 Debug\pp_lab3.obj
+         Debug\stdafx.obj
+         Debug\task2_sum.obj
+         Debug\task3_sqrt.obj
+         Debug\task4_mul.obj
+         Debug\task5_shift.obj
+         pp_lab3.vcxproj -> d:\uni\parallel pr\labs\pp_lab3\Debug\pp_lab3.exe
+     1>Done Building Project "d:\uni\parallel pr\labs\pp_lab3\pp_lab3\pp_lab3.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.68

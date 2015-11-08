@@ -1,30 +1,15 @@
-
 #include "stdafx.h"
 
-
-//ULLONG start1, finish1, min = ULLONG_MAX;
-
-template <typename T>
-inline T custom_abs(T i_val)
-{
-	return std::abs((T)i_val);
-}
-
-template <typename T>
-void fill(T arr[], size_t size){
-	fill(arr, size, -20, 20);
-}
 template <typename T>
 void fill(T arr[], size_t size, int max, int min){
-	min = custom_abs(min);
+	min = abs(max);
 	for (int i = 0; i < size; i++){
-		;
-		//arr[i] = static_cast <T> (rand()) / static_cast <T> (6000);
-		arr[i] = static_cast <T> (rand() % (max + min + 1) - min) / 5;
-		cout << rand() << endl;
+		arr[i] = static_cast <T> (rand() % (max + min + 1) - min) / 1.1;
+
 	}
 	cout << endl;
 }
+
 // Task 2.
 template<typename T>
 void sum(const T *x, const T *y, T *z, size_t size){

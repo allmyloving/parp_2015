@@ -2,14 +2,8 @@
 //
 
 #include "stdafx.h"
-#include <iostream>
 #include "time.h"
-#include "Windows.h"
 
-using namespace std;
-
-#define ULONG unsigned long
-#define ULLONG unsigned long long
 #define SIZE 10000
 int a[SIZE];
 ULLONG start, finish, min = ULLONG_MAX;
@@ -267,7 +261,16 @@ int _tmain(int argc, _TCHAR* argv[])
 	//Task1();
 	//Task2();
 	//Task3();
-	Task4(3);
+	//Task4(3);
+	//Task5();
+
+	float b[10];
+	fill(b, 10);
+	print(b, 10);
+
+	fill(a, 10);
+	print(a, 10);
+
 
 
 	return 0;

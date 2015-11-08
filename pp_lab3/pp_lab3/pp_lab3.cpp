@@ -20,16 +20,11 @@
 #define CPUID_VENDOR_RISE         "RiseRiseRise"
 
 //ULLONG start11, finish, min = ULLONG_MAX;
-
 //template <typename T>
 //void fill(T arr[], size_t size){
-//	min = abs(min);
-//	for (int i = 0; i < size; i++){
-//		;
-//		//arr[i] = static_cast <T> (rand()) / static_cast <T> (6000);
-//		arr[i] = static_cast <T> (rand() % (max + min + 1) - min) / 1.1;
-//	}
+//	fill(arr, size, -20, 20);
 //}
+
 
 template <typename T>
 void print(T arr[], size_t size){
@@ -39,6 +34,7 @@ void print(T arr[], size_t size){
 	std::cout << endl;
 }
 
+// http://wiki.osdev.org/CPUID
 //EBX = 'u' 'n' 'e' 'G'
 //EDX = 'I' 'e' 'n' 'i'
 //ECX = 'l' 'e' 't' 'n'
@@ -100,12 +96,16 @@ void Task1(){
 
 int _tmain(int argc, _TCHAR* argv[])
 {
-	srand(time(0));
+	srand(time(NULL));
 	//Task1();
 	//Task2();
 	//Task3();
 	//Task4();
-	Task5();
+	//Task5();
+
+	int a[10];
+	fill(a, 10);
+	print(a, 10);
 
 	//func1(print);
 	return 0;
