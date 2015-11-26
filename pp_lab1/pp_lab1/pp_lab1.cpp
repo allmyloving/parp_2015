@@ -2,6 +2,7 @@
 #include "time.h"
 #include <iostream>
 #include "Windows.h"
+#include "Matrix.h"
 #include <vector>
 #include <typeinfo>
 
@@ -106,7 +107,7 @@ void asm1(){
 		start = getTacts();
 		func();
 		finish = getTacts();
-		if (min >finish - start) {
+		if (min > finish - start) {
 			min = finish - start;
 		}
 	}
@@ -197,30 +198,27 @@ void Task4(){
 // Task 5.
 
 template <typename T>
-void fill(T** a, vector<vector<T> > &matrix, size_t size){
+void fill(T** a, size_t size){
 	for (size_t i = 0; i < size; i++){
 		a[i] = new T[size];
 		for (size_t j = 0; j < size; j++){
 			T temp = rand() % 101;
 			a[i][j] = temp;
-			matrix[i][j] = temp;
 		}
 	}
 }
 
 template <typename T>
-ULLONG mul(vector< vector<T> > a,
-	vector< vector<T> > b,
-	vector< vector<T> > &c, int size) {
+ULLONG mul(Matrix<T> a,	Matrix<T> b, Matrix<T> &c, int size) {
 	min = ULLONG_MAX;
 	for (int i = 0; i < 3; i++){
 		start = GetTickCount();
 
 		for (int i = 0; i < size; i++) {
 			for (int j = 0; j < size; j++) {
-				c[i][j] = 0;
+				c.Arr[i][j] = 0;
 				for (int k = 0; k < size; k++) {
-					c[i][j] += a[i][k] * b[k][j];
+					c.Arr[i][j] += a.Arr[i][k] * b.Arr[k][j];
 				}
 			}
 		}
@@ -258,27 +256,31 @@ ULLONG mulArr(T** a, T** b, T** c, int size) {
 
 template<typename T>
 void Task5_7(int size, T type){
+	cout << "defining type" << endl;
 	cout << "type: " << typeid(type).name() << endl;
 
 	T** a = new T*[size];
 	T** b = new T*[size];
 	T** c = new T*[size];
-
+/*
 	vector<vector<T> > a1(size, vector<T>(size));
 	vector<vector<T> > b1(size, vector<T>(size));
-	vector<vector<T> > c1(size, vector<T>(size));
+	vector<vector<T> > c1(size, vector<T>(size));*/
 
-	fill(a, a1, size);
-	fill(b, b1, size);
-
+	fill(a, size);
+	fill(b, size);
 	for (int i = 0; i < size; i++){
 		c[i] = new T[size];
 	}
 
+	/*Matrix<T> a1(size, a);
+	Matrix<T> b1(size, b);
+	Matrix<T> c1(size, c);*/
+	
 	ULLONG arTime = mulArr(a, b, c, size);;
 	printf("Using arrays: %d\n", arTime);
 
-	ULLONG vecTime = mul(a1, b1, c1, size);
+	ULLONG vecTime = 0; // mul(a1, b1, c1, size);
 	printf("Using vectors: %d\n", vecTime);
 
 	if (arTime != 0){
@@ -287,14 +289,15 @@ void Task5_7(int size, T type){
 	else{
 		printf("Too little elements for GetTickCount().\n");
 	}
+	cout << "met end" << endl;
 }
 
 void Task5_7(){
 	printf("~~~~~~~~~~~~~~~~~~~~~~~Task5 Task7~~~~~~~~~~~~~~~~~~~~~~~\n");
-	int a = 0;
+	int a = 1;
 	int size = 200;
 	Task5_7(size, (float)a);
-	printf("----------------------------------------------------------\n");
+	//printf("----------------------------------------------------------\n");
 	Task5_7(size, (double)a);
 	printf("----------------------------------------------------------\n");
 	Task5_7(size, (__int8)a);

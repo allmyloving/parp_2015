@@ -5,6 +5,8 @@
 #include "time.h"
 
 #define SIZE 10000
+#define ULLONG unsigned long
+
 int a[SIZE];
 ULLONG start, finish, min = ULLONG_MAX;
 
@@ -216,17 +218,14 @@ void Task3(){
 	fill(p2, size2, -1, 1);
 
 	polMul(p1, p2, p3, size1, size2);
-	print(p3, size3);
 	memset(p3, 0, size3*sizeof(int));
-	print(p3, size3);
 	polMulOpt(p1, p2, p3, size1, size2);
-	print(p3, size3);
 }
 
 // Task 4.
 
 template <typename T>
-void round(T arr[], size_t size, size_t precision){
+void round(T arr[], size_t size){
 	min = ULLONG_MAX;
 	for (int i = 0; i < 10; i++){
 		start = __rdtsc();
@@ -243,35 +242,46 @@ void round(T arr[], size_t size, size_t precision){
 	printf("round#time for %d elements: %d\n", size, min);
 }
 
-void Task4(size_t precision){
-	printf("~~~~~~~~~~~~~~~~~~~~~~~Task4~~~~~~~~~~~~~~~~~~~~~~~\n");
-	const int size = 10;
-	double a[size];
-	fill(a, size);
-	//print(a, size);
-	
-	round(a, size, precision);
-	//print(a, size);
+template <typename T>
+void roundOpt(T arr[], size_t size){
+	min = ULLONG_MAX;
+	for (int i = 0; i < 10; i++){
+		start = __rdtsc();
+
+		for (int i = 0; i < size; i++){
+			T a = arr[i];
+			arr[i] = (float)(int)(a + (a >= 0) - 0.5);
+		}
+
+		finish = __rdtsc();
+		if (finish - start < min){
+			min = finish - start;
+		}
+	}
+	printf("roundOpt#time for %d elements: %d\n", size, min);
 }
+
+void Task4(){
+	printf("~~~~~~~~~~~~~~~~~~~~~~~Task4~~~~~~~~~~~~~~~~~~~~~~~\n");
+	const int size = 500;
+	float a[size];
+	fill(a, size);	
+	round(a, size);
+
+	fill(a, size);
+	roundOpt(a, size);
+}
+\
 
 int _tmain(int argc, _TCHAR* argv[])
 {
 	srand(time(NULL));
 	
-	//Task1();
-	//Task2();
-	//Task3();
-	//Task4(3);
+	/*Task1();
+	Task2();
+	Task3();*/
+	Task4();
 	//Task5();
-
-	float b[10];
-	fill(b, 10);
-	print(b, 10);
-
-	fill(a, 10);
-	print(a, 10);
-
-
 
 	return 0;
 }

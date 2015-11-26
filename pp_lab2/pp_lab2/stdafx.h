@@ -9,7 +9,13 @@
 
 #include <stdio.h>
 #include <tchar.h>
+#include "Windows.h"
+#include "intrin.h"
+#include "time.h"
+#include <iostream>
 
+using namespace std;
 
+void Task5();
 
 // TODO: reference additional headers your program requires here
