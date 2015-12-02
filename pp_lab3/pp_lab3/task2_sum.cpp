@@ -1,6 +1,11 @@
 #include "stdafx.h"
 
 template <typename T>
+void fill(T arr[], size_t size){
+	fill(arr, size, -20, 20);
+}
+
+template <typename T>
 void fill(T arr[], size_t size, int max, int min){
 	min = abs(max);
 	for (int i = 0; i < size; i++){

@@ -4,5 +4,14 @@
 
 #include "stdafx.h"
 
-// TODO: reference any additional headers you need in STDAFX.H
-// and not in this file
+
+
+
+template <typename T>
+void print(T arr[], size_t size){
+	for (size_t i = 0; i < size; i++){
+		std::cout << arr[i] << " ";
+	}
+	std::cout << endl;
+}
+

@@ -19,20 +19,6 @@
 #define CPUID_VENDOR_NSC          "Geode by NSC"
 #define CPUID_VENDOR_RISE         "RiseRiseRise"
 
-//ULLONG start11, finish, min = ULLONG_MAX;
-//template <typename T>
-//void fill(T arr[], size_t size){
-//	fill(arr, size, -20, 20);
-//}
-
-
-template <typename T>
-void print(T arr[], size_t size){
-	for (size_t i = 0; i < size; i++){
-		std::cout << arr[i] << " ";
-	}
-	std::cout << endl;
-}
 
 // http://wiki.osdev.org/CPUID
 //EBX = 'u' 'n' 'e' 'G'
@@ -101,11 +87,11 @@ int _tmain(int argc, _TCHAR* argv[])
 	//Task2();
 	//Task3();
 	//Task4();
-	//Task5();
+	Task5();
 
-	int a[10];
-	fill(a, 10);
-	print(a, 10);
+	/*int a[10];
+	fill(a, 10, 10, -10);
+	print(a, 10);*/
 
 	//func1(print);
 	return 0;
