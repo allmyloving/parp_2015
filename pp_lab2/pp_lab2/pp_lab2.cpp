@@ -4,7 +4,7 @@
 #include "stdafx.h"
 #include "time.h"
 
-#define SIZE 10000
+#define SIZE 100000
 #define ULLONG unsigned long
 
 int a[SIZE];
@@ -90,10 +90,10 @@ void Task1(){
 void sort(int a[], size_t size){
 	min = ULLONG_MAX;
 	for (int i = 0; i < 10; i++){
-		start = __rdtsc();
+		start = GetTickCount(); //__rdtsc();
 
-		for (size_t i = 0; i < size - 1; i++){
-			for (size_t j = 0; j < size - i - 1; j++){
+		for (size_t i = 0; i < size; i++){
+			for (size_t j = 0; j < size - (i + 1); j++){
 				if (a[j] > a[j + 1]){
 					int temp = a[j];
 					a[j] = a[j + 1];
@@ -102,7 +102,7 @@ void sort(int a[], size_t size){
 			}
 		}
 
-		finish = __rdtsc();
+		finish = GetTickCount();// __rdtsc();
 		if (finish - start < min){
 			min = finish - start;
 		}
@@ -114,7 +114,7 @@ void sort(int a[], size_t size){
 void sortOpt(int a[], size_t size){
 	min = ULLONG_MAX;
 	for (int i = 0; i < 10; i++){
-		start = __rdtsc();
+		start = GetTickCount();// __rdtsc();
 
 		for (int i = 0; i < size - 1; i++){
 			for (int j = i; j >= 0; j--){
@@ -126,7 +126,7 @@ void sortOpt(int a[], size_t size){
 			}
 		}
 
-		finish = __rdtsc();
+		finish = GetTickCount(); //__rdtsc();
 		if (finish - start < min){
 			min = finish - start;
 		}
@@ -169,7 +169,7 @@ void polMulOpt(int p1[], int p2[], int res[], int size1, int size2){
 		start = __rdtsc();
 
 		for (size_t j = 0; j < size2; j++) {
-			if (p2[j] != 0){
+			if (p2[j] == 0){
 				continue;
 			}
 			BOOL pos = p2[j] == 1;
@@ -180,6 +180,7 @@ void polMulOpt(int p1[], int p2[], int res[], int size1, int size2){
 				else{
 					res[k + j] -= p1[k];
 				}
+				//res[k + j] += p1[k] * p2[j];
 			}
 		}
 
@@ -207,7 +208,7 @@ void printPol(int p[], int size){
 void Task3(){
 	printf("~~~~~~~~~~~~~~~~~~~~~~~Task3~~~~~~~~~~~~~~~~~~~~~~~\n");
 	const int size1 = 10;
-	const int size2 = 10;
+	const int size2 = 100;
 	const int size3 = size1 + size2 - 1;
 
 	int p1[size1];
@@ -218,8 +219,10 @@ void Task3(){
 	fill(p2, size2, -1, 1);
 
 	polMul(p1, p2, p3, size1, size2);
+	//printPol(p3, size3);
 	memset(p3, 0, size3*sizeof(int));
 	polMulOpt(p1, p2, p3, size1, size2);
+	//printPol(p3, size3);
 }
 
 // Task 4.
@@ -271,16 +274,16 @@ void Task4(){
 	fill(a, size);
 	roundOpt(a, size);
 }
-\
+
 
 int _tmain(int argc, _TCHAR* argv[])
 {
 	srand(time(NULL));
 	
-	/*Task1();
-	Task2();
-	Task3();*/
-	Task4();
+	Task1();
+	//Task2();
+	Task3();
+	/*Task4();*/
 	//Task5();
 
 	return 0;

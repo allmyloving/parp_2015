@@ -1,0 +1,75 @@
+#include "stdafx.h"
+
+typedef struct{
+	double begin;
+
+	double end;
+
+	double pi;
+} DATA, *PDATA;
+
+double gPi = 0;
+CRITICAL_SECTION cs;
+
+DWORD WINAPI tfunc(LPVOID d){
+	PDATA data = (PDATA)d;
+	data->pi = 0;
+	for (double i = data->begin+1; i < data->end; i++){
+		data->pi += (1.0 / (i*i));
+	}
+	return 1;
+}
+
+double Task4_win(){
+	InitializeCriticalSection(&cs);
+	const int cores = omp_get_max_threads();
+	HANDLE* hThreads = new HANDLE[cores];
+	PDATA data = new DATA[cores];
+	int iter_pt = PI_PRECISION / cores;
+
+	// try using common pointer to pi and cr. section
+	for (int i = 0; i < cores; i++){
+		data[i].begin = i*iter_pt;
+		data[i].end = (i + 1)*iter_pt;
+		hThreads[i] = CreateThreadU(tfunc, (LPVOID)&data[i]);
+	}
+
+	WaitForMultipleObjects(cores, hThreads, TRUE, INFINITE);
+
+	double pi = 0;
+	for (int i = 0; i < cores; i++){
+		pi += data[i].pi;
+		CloseHandle(hThreads[i]);
+	}
+
+	delete[] hThreads;
+	delete[] data;
+
+	return sqrt(pi * 6);
+}
+
+double Task4_omp(){
+	double pi = 1;
+
+#pragma omp parallel for reduction(+:pi)
+	for (int i = 2.0; i < PI_PRECISION; i++){
+		pi += (1 / ((double)i*i));
+	}
+	pi = sqrt(pi * 6);
+
+	return pi;
+}
+
+
+void Task4(){
+	printf("\n-----------Task4-----------\n");
+	for (int i = 0; i < 5; i++){
+		ULLONG start = GetTickCount();
+		double pi = Task4_win();
+		printf("pi=%1.10f (#win_parallel)\ttime=%d\n", pi, (GetTickCount() - start));
+
+		start = GetTickCount();
+		pi = Task4_omp();
+		printf("pi=%1.10f (#omp)\ttime=%d\n", pi, (GetTickCount() - start));
+	}
+}

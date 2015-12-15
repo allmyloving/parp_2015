@@ -32,6 +32,14 @@ BYTE getBytes(string s){
 	return (res | (s[1] - '0'));
 }
 
+void printTable(){
+	cout << "table: ";
+	for (int i = 0; i < 4; i++){
+		printf("%d", table[i]);
+	}
+	cout << endl;
+}
+
 void Task5(){
 	printf("~~~~~~~~~~~~~~~~~~~~~~~Task5~~~~~~~~~~~~~~~~~~~~~~~\n");
 	char res[] = "EO";
@@ -45,15 +53,15 @@ void Task5(){
 		string result;
 		memset(table, 0, 4);
 
-		for (int i = 0; i < str.length(); i++){
-			cout << "table: ";
-			for (int i = 0; i < 4; i++){
-				printf("%d", table[i]);
-			}
-			cout << endl;
+		state += str[0];
+		state = state.substr(1, 2);
 
+		for (int i = 1; i < str.length(); i++){
+			//printTable();
+			cout << state.c_str() << endl;
 			BYTE current = str[i] - '0';
 			BYTE index = getBytes(state);
+			//cout << state << " " << (int)index << endl;
 			BOOL error = predict(table[index], current);
 
 			setTable(index, current);
