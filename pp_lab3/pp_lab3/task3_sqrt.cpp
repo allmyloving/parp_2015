@@ -27,7 +27,7 @@ void sqrtSSE_double(double* x, double* y, size_t size){
 }
 
 void testFloatSqrt(){
-	printf("--------------float--------------\n");
+	printf("--------------float--------------");
 	__declspec(align(16)) float a[SIZE];
 	__declspec(align(16)) float b[SIZE] = {};
 
@@ -46,7 +46,7 @@ void testFloatSqrt(){
 }
 
 void testDoubleSqrt(){
-	printf("--------------double--------------\n");
+	printf("--------------double--------------");
 	__declspec(align(16)) double a[SIZE];
 	__declspec(align(16)) double b[SIZE] = {};
 
@@ -65,7 +65,7 @@ void testDoubleSqrt(){
 }
 
 void Task3(){
-	printf("~~~~~~~~~~~~~~~~~~~~~~~Task3~~~~~~~~~~~~~~~~~~~~~~~\n");
+	printf("~~~~~~~~~~~~~~~~~~~~~~~Task3#sqrt~~~~~~~~~~~~~~~~~~~~~~\n");
 	testFloatSqrt();
 	testDoubleSqrt();
 }

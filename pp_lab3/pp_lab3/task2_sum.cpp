@@ -83,7 +83,7 @@ void testInt(){
 	std::cout << "time SSE: " << finish1 - start1 << endl << endl;
 }
 void testByte(){
-	printf("--------------byte--------------\n");
+	printf("--------------byte--------------");
 	__declspec(align(16)) BYTE a[SIZE];
 	__declspec(align(16)) BYTE b[SIZE];
 	__declspec(align(16)) BYTE c[SIZE] = {};
@@ -103,7 +103,7 @@ void testByte(){
 }
 
 void testFloat(){
-	printf("--------------float--------------\n");
+	printf("--------------float--------------");
 	__declspec(align(16)) float a[SIZE];
 	__declspec(align(16)) float b[SIZE];
 	__declspec(align(16)) float c[SIZE] = {};
@@ -123,7 +123,7 @@ void testFloat(){
 }
 
 void testDouble(){
-	printf("--------------double--------------\n");
+	printf("--------------double--------------");
 	__declspec(align(16)) double a[SIZE];
 	__declspec(align(16)) double b[SIZE];
 	__declspec(align(16)) double c[SIZE] = {};
@@ -143,7 +143,7 @@ void testDouble(){
 }
 
 void Task2(){
-	printf("~~~~~~~~~~~~~~~~~~~~~~~Task2~~~~~~~~~~~~~~~~~~~~~~~\n");
+	printf("~~~~~~~~~~~~~~~~~~~~~~~Task2#sum~~~~~~~~~~~~~~~~~~~~~~~\n");
 	testByte();
 	testInt();
 	testFloat();

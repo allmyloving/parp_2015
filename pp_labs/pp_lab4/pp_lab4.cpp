@@ -46,6 +46,7 @@ double Task3_2(ULLONG p){
 	double pi = 0.;
 	double dx = 1. / p;
 	double x = 0.;
+
 	for (ULLONG i = 0; i < p; i++) {
 		pi += sqrt(1 - x * x) * dx;
 		x += dx;
@@ -59,7 +60,6 @@ double Task3_3(ULLONG p){
 
 	for (long i = 1.0; i < p; i++){
 		pi += (1 / ((double)i*i));
-		//cout << pi << endl;
 	}
 	return sqrt(pi * 6);
 }
@@ -67,16 +67,14 @@ double Task3_3(ULLONG p){
 // pi ~ 3.14159...
 void Task3(){
 	printf("\n-----------Task3-----------\n");
+	printf("pi=%s #wikipedia\n", "3.1415926535897...");
 
 	ULLONG start, end, min = ULLONG_MAX;
 	double pi;
 	for (int i = 0; i < 1; i++){
-		start = GetTickCount();// __rdtsc();
-		start = clock();
+		start = GetTickCount();
 		pi = Task3_1(PI_PRECISION);
 		end = GetTickCount();// __rdtsc();
-		end = clock();
-		cout << start << " " << end << endl;
 		if (min > end - start){
 			min = end - start;
 		}
@@ -113,6 +111,7 @@ int _tmain(int argc, _TCHAR* argv[])
 	Task2();
 	Task3();
 	Task4();
+
 	return 0;
 }
 

@@ -35,6 +35,9 @@ void print(int arr[], size_t size){
 	std::cout << endl;
 }
 void Task5(){
+
+	printf("~~~~~~~~~~~~~~~~~~~~~~~Task5#shift~~~~~~~~~~~~~~~~~~~~~\n");
+
 	const int size = 16;
 	__declspec(align(16)) int a[size];
 	__declspec(align(16)) int b[size] = {};

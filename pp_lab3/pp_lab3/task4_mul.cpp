@@ -19,7 +19,7 @@ void mulSSE_float(const float* x, const float* y, float* z, size_t size){
 }
 
 void testFloatMul(){
-	printf("--------------float--------------\n");
+	printf("--------------float--------------");
 	__declspec(align(16)) float a[SIZE];
 	__declspec(align(16)) float b[SIZE];
 	__declspec(align(16)) float c[SIZE] = {};
@@ -39,6 +39,6 @@ void testFloatMul(){
 }
 
 void Task4(){
-	printf("~~~~~~~~~~~~~~~~~~~~~~~Task4~~~~~~~~~~~~~~~~~~~~~~~\n");
+	printf("~~~~~~~~~~~~~~~~~~~~~~~Task4#mul~~~~~~~~~~~~~~~~~~~~~~~\n");
 	testFloatMul();
 }

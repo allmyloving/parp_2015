@@ -22,6 +22,6 @@ using namespace std;
 #define CreateThreadU(threadFunc, params) CreateThread(0, 0, threadFunc, params, 0, 0);
 
 #define ULLONG unsigned long long
-#define PI_PRECISION 10000000
+#define PI_PRECISION 100000000
 
 void Task4();

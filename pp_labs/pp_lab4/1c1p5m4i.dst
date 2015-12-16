@@ -21,7 +21,7 @@ DWORD WINAPI tfunc(LPVOID d){
 }
 
 double Task4_win(){
-	//InitializeCriticalSection(&cs);
+	InitializeCriticalSection(&cs);
 	const int cores = omp_get_max_threads();
 	HANDLE* hThreads = new HANDLE[cores];
 	PDATA data = new DATA[cores];

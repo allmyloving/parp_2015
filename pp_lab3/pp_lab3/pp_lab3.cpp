@@ -83,16 +83,13 @@ void Task1(){
 int _tmain(int argc, _TCHAR* argv[])
 {
 	srand(time(NULL));
-	//Task1();
-	//Task2();
-	//Task3();
-	//Task4();
+	Task1();
+	Task2();
+	Task3();
+	Task4();
 	Task5();
 
-	/*int a[10];
-	fill(a, 10, 10, -10);
-	print(a, 10);*/
-
+	
 	//func1(print);
 	return 0;
 }
